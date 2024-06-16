@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import {App} from './components/App/App'
+import reportWebVitals from './reportWebVitals'
+import {GameEngineProvider} from "./hooks/useGameEngine"
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <GameEngineProvider>
+          <Router>
+              <App />
+          </Router>
+      </GameEngineProvider>
   </React.StrictMode>
 );
 
