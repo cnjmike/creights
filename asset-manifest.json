@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/creights/static/css/main.110889d7.css",
-    "main.js": "/creights/static/js/main.9c65891b.js",
+    "main.js": "/creights/static/js/main.9b33962f.js",
     "static/js/453.70a781a1.chunk.js": "/creights/static/js/453.70a781a1.chunk.js",
     "index.html": "/creights/index.html",
     "main.110889d7.css.map": "/creights/static/css/main.110889d7.css.map",
-    "main.9c65891b.js.map": "/creights/static/js/main.9c65891b.js.map",
+    "main.9b33962f.js.map": "/creights/static/js/main.9b33962f.js.map",
     "453.70a781a1.chunk.js.map": "/creights/static/js/453.70a781a1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.110889d7.css",
-    "static/js/main.9c65891b.js"
+    "static/js/main.9b33962f.js"
   ]
 }
