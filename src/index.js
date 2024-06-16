@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'
+import * as ReactDOM from 'react-dom'
 import './index.css'
 import {App} from './components/App/App'
 import reportWebVitals from './reportWebVitals'
@@ -11,15 +11,16 @@ import {
     Link
 } from "react-router-dom"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+//const root = ReactDOM.createRoot(document.getElementById('root'));
+ReactDOM.render(
+    <React.StrictMode>
       <GameEngineProvider>
-          <Router>
+          <Router basename="/creights">
               <App />
           </Router>
       </GameEngineProvider>
-  </React.StrictMode>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
