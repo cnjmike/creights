@@ -1,0 +1,8 @@
+@media only screen and (orientation:portrait) {
+    body:before {
+        content: 'Please rotate your screen for best viewing experience';
+        display: block;
+        text-align: center;
+        padding: 100px 50px;
+    }
+}
