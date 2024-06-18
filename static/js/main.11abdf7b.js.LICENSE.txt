@@ -1,0 +1,78 @@
+/*! (c) Stefan Thomas | https://github.com/bitcoinjs/bitcoinjs-lib
+ */
+
+/*! (c) Tom Wu | http://www-cs-students.stanford.edu/~tjw/jsbn/
+ */
+
+/*! Image Map Resizer (imageMapResizer.min.js ) - v1.0.10 - 2019-04-10
+ *  Desc: Resize HTML imageMap to scaled image.
+ *  Copyright: (c) 2019 David J. Bradshaw - dave@bradshaw.net
+ *  License: MIT
+ */
+
+/*! Mike Samuel (c) 2009 | code.google.com/p/json-sans-eval
+ */
+
+/*! js-cookie v3.0.5 | MIT */
+
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @remix-run/router v1.16.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.23.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
