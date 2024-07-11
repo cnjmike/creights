@@ -7,3 +7,56 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+  --deco-black: #190006;
+  --deco-green: #36594a;
+  --deco-red: #800020;
+  --deco-gold: #d4af37 ;
+  --deco-grey: #aaa9ad;
+}
+
+input, textarea, select {
+  font: inherit;
+  font-size: 1.5em;
+  color: var(--deco-gold);
+  border: none;          /* Removes the existing border */
+  border-bottom: 1px solid var(--deco-gold); /* Adds a bottom border */
+  background: transparent; /* Makes the input box transparent */
+  outline: none;
+}
+
+button {
+  font: inherit;
+  color: var(--deco-gold);
+  background: transparent;
+  border-width: 1px;
+  border-color: var(--deco-gold);
+  border-radius: 8px;
+}
+
+button:hover {
+  box-shadow: 0 0 6px 6px var(--deco-gold)
+}
+
+button:active {
+  background-color: var(--deco-gold);
+  color: var(--deco-black)
+}
+
+button:disabled {
+  color: var(--deco-grey);
+  border-color: var(--deco-grey);
+}
+
+.deco-box {
+  margin: 30px;
+  height: 200px;
+  border: 15px solid transparent; /* control the offset of the lines */
+  outline: 2px solid var(--deco-gold); /* adjust the 2px here */
+  outline-offset: -10px; /* control the offset of the rectangle */
+  background:
+          conic-gradient(from 90deg at 2px 2px,#0000 25%,var(--deco-gold) 0)
+          0 0/calc(100% - 2px) calc(100% - 2px) padding-box border-box;
+}
+

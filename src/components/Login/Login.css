@@ -1,0 +1,13 @@
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.image-container img {
+     width: 40%;
+ }
+
+
+

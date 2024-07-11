@@ -1,7 +1,6 @@
-import {PlacematContainer} from "../PlacematContainer";
-import QRCode from "react-qr-code";
-import {Call} from "../Call/Call";
-import {Game} from "../Game/Game";
+import {PlacematContainer} from "../PlacematContainer"
+import QRCode from "react-qr-code"
+
 
 export const Status = () => {
 
@@ -12,7 +11,7 @@ export const Status = () => {
 
                 </div>
                 <div className="w-full h-1/3 flex items-center justify-center p-8">
-                    <QRCode size={128} value="https://pro:3000?hand=1"/>
+                    <QRCode size={128} value="https://pro:3000/creights?hand=1"/>
                 </div>
             </div>
         </PlacematContainer>

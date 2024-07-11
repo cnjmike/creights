@@ -10,7 +10,6 @@ import "./App.css"
 export const App = () => {
 
     const [ params, _setParams ] = useSearchParams()
-    console.log(params.toString())
     const isHand = params.get('hand')
 
     return  isHand ? <Hand /> : <Room />
