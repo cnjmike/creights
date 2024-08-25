@@ -6,11 +6,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': [ 'mendl-sans-dusk', 'ui-sans-serif' ]
+        'sans': [ 'mendl-sans-dusk', 'ui-sans-serif' ],
+        'vga': [ 'vga437', 'system-ui']
       },
       colors: {
         'deco-black': '#190006',
         'deco-green': '#36594a',
+        'deco-grey-green': '#557266',
         'deco-red': '#800020',
         'deco-gold': '#d4af37',
         'deco-grey': '#aaa9ad'

@@ -1,17 +1,17 @@
 
-import React, { Component } from "react";
+import React, {Component, useEffect} from "react"
 
-import {Room} from '../Room/Room'
-import {Hand} from '../Hand/Hand'
-import { useSearchParams} from "react-router-dom";
+import {Public} from '../Public/Public'
+import {Private} from '../Private/Private'
 import "./App.css"
-
+import {usePrivateAccess} from "../../hooks/usePrivateAccess"
 
 export const App = () => {
 
-    const [ params, _setParams ] = useSearchParams()
-    const isHand = params.get('hand')
+    const {
+        windowId
+    } = usePrivateAccess()
 
-    return  isHand ? <Hand /> : <Room />
+    return  windowId ? <Private /> : <Public />
 }
 

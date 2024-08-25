@@ -1,0 +1,44 @@
+import {useState, useEffect} from "react"
+import Card from "./Card"
+import {useGameEngine} from "../../hooks/useGameEngine";
+
+const Hand = ({player, rotationOffset, myHand, thumbX, thumbY, cardW, cardH}) => {
+
+    const {
+        discard
+    } = useGameEngine()
+
+    
+
+    return (
+        <>
+            { player.hand?.map((card,index) => {
+
+                return(
+                    <div
+                        key={`my-card-${index}`}
+                        style={{
+                            top: `${thumbY - cardH}px`,
+                            left: `${thumbX}px`,
+                            height: `${cardH}px`,
+                            width: `${cardW}px`,
+                            transform: `translateY(-${2*index}%) rotate(${ firstCardTheta + index * cardDTheta}rad)`,
+                            transformOrigin: 'bottom left'
+                        }}
+                        className={`absolute z-${100+index}`}
+                    >
+                        <Card
+                            idString={(myHand ? card.id_string : undefined)}
+                            showCount={0}
+                            onClick={() => {
+                                discard(index, card.id_string)
+                            }}
+                        />
+                    </div>
+                )
+            })}
+        </>
+    )
+}
+
+export default Hand

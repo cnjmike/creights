@@ -1,0 +1,124 @@
+import {useGameEngine} from "../../hooks/useGameEngine"
+import Pile from "../Pile"
+import Stock from "../Stock"
+import React, {useEffect, useRef, useState} from "react"
+import Card from "../Card"
+
+export const PlayingHand = () => {
+
+    const {
+        myself,
+        currentDealer,
+        phase
+    } = useGameEngine()
+
+    const [message, setMessage] = useState("")
+    const [cardH, setCardH] = useState(null)
+    const [blindDivs, setBlindDivs ] = useState([])
+    const [handDivs, setHandDivs] = useState([])
+    const cardRef = useRef(null)
+    const compRef = useRef(null)
+
+    useEffect(() => {
+        const handleResize = () => {
+
+            compRef.current.clientHeight
+
+
+        }
+
+        window.addEventListener('resize', handleResize)
+        handleResize()
+        return () => window.removeEventListener('resize', handleResize)
+
+        setCardH(cardRef.current.clientHeight)
+    }, [])
+
+
+    useEffect(() => {
+        if (phase === 'awaiting_deal' && currentDealer.member.member_id !== myself.member.member_id)
+            setMessage(`Waiting for ${currentDealer.member.name} to deal.`)
+        else
+            setMessage(null)
+    }, [phase] )
+
+    useEffect(() => {
+
+        if (myself.blind) {
+            const enabled = ! (currentDealer.member.member_id === myself.member.member_id && phase === 'dealing')
+
+            setBlindDivs(
+                myself.blind.map((card, cardIndex) => {
+                    const slopX =  card.r * Math.cos(card.theta) - 50
+                    const slopY = card.r * Math.sin(card.theta) - 50
+                    return (
+                        <div
+                            style={{
+                                height: `${cardH}px`,
+                                width: `${cardH * 5 / 7}px`,
+                                top: '50%',
+                                left: '50%',
+                                transform: `translateX(${slopX}%) translateY(${slopY}%) rotate(${card.rotation}rad)`
+                            }}
+                            className={`absolute z-${cardIndex} flex items-center justify-center`}
+                            onClick={() => {
+                                pickUp()
+                            }}
+                        ><Card card={card} /></div>
+                    )
+                })
+            )
+
+            setHandDivs(
+                myself.hand.map((card, cardIndex) => {
+                    return (
+                        <Card card={card} />
+                    )
+                })
+            )
+        }
+    }, [myself])
+
+    const deal = () => {
+        fetch(`https://creights.integneo.com:3427/game/FSA/member/${myself.member.member_id}/deal`, { method: 'POST' })
+    }
+
+    const pickUp = () => {
+        fetch(`https://creights.integneo.com:3427/game/FSA/member/${myself.member.member_id}/pickup`, { method: 'POST'})
+    }
+
+    return(
+        <>
+            <div ref={compRef} className="flex items-center justify-center w-full h-full absolute">
+                <div className="flex items-center justify-center w-11/12 h-full relative">
+                    {phase === 'awaiting_deal' && currentDealer.member.member_id === myself.member.member_id && (
+                        <button className="w-1/2" onClick={() => deal()}>Deal</button>
+                    )}
+                    { handDivs }
+                </div>
+
+                <div className="flex flex-col w-1/12 h-full justify-items-center relative mx-2">
+                    <div ref={cardRef} className="my-2"><Stock/></div>
+                    <div className="my-2"><Pile/></div>
+                </div>
+                <div className="flex h-full bottom-3 right-6">
+                    <div
+                        style={{
+                            transform: `rotate(${Math.PI / 2}rad)`
+                        }}
+                        className='absolute w-1/6 h-1/6 bottom-2 right-2 bg-amber-500'>
+                        {blindDivs}
+                    </div>
+                </div>
+            </div>
+
+            {message ?
+                <div className='absolute w-full bottom-1 bg-deco-gold text-deco-black z-50'>
+                    {message}
+                </div> : ''
+            }
+        </>
+    )
+}
+
+export default PlayingHand

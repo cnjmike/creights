@@ -1,24 +1,24 @@
-import React from 'react';
+import React from 'react'
 import * as ReactDOM from 'react-dom'
 import './index.css'
 import {App} from './components/App/App'
 import reportWebVitals from './reportWebVitals'
 import {GameEngineProvider} from "./hooks/useGameEngine"
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
+    BrowserRouter as Router
 } from "react-router-dom"
+import {PrivateAccessProvider} from "./hooks/usePrivateAccess"
 
-//const root = ReactDOM.createRoot(document.getElementById('root'));
+
 ReactDOM.render(
     <React.StrictMode>
-      <GameEngineProvider>
-          <Router basename="/creights">
-              <App />
-          </Router>
-      </GameEngineProvider>
+        <Router basename="/creights">
+            <PrivateAccessProvider>
+                <GameEngineProvider>
+                    <App />
+                </GameEngineProvider>
+            </PrivateAccessProvider>
+        </Router>
     </React.StrictMode>,
     document.getElementById('root')
 );

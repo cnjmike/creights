@@ -60,3 +60,11 @@ button:disabled {
           0 0/calc(100% - 2px) calc(100% - 2px) padding-box border-box;
 }
 
+@font-face {
+  font-family: 'vga437';
+  src: url("../public/fonts/vga437.woff2") format("woff2"),
+     url("../public/fonts/vga437.woff") format("woff"),
+     url("../public/fonts/vga437.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
